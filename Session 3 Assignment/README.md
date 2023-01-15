@@ -6,8 +6,6 @@ Excel Link: https://iitbacin-my.sharepoint.com/:x:/g/personal/210100140_iitb_ac_
 Screenshots: 
 <img src = "images/Screenshot 2023-01-14 at 4.02.23 AM.png" style="height: 100px; width:100px;"/>
 <img src = "images/Screenshot 2023-01-14 at 4.02.43 AM.png">
-<img src = "images/Screenshot 2023-01-14 at 4.02.53 AM.png">
-<img src = "images/Screenshot 2023-01-14 at 4.05.42 AM.png">
 
 
 
