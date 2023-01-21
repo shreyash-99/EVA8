@@ -330,7 +330,7 @@ Conclusion:
 2. Dont know how reducing the but reducing the channel the size of channels(16->8) for first was better for the model.
 3. Increasing the lr to 0.3 also helped to achieve the target fast and steplr helped it to reduced it so that the target doesnt overshoot.
 
-Model : https://colab.research.google.com/drive/1HPWIZeY2q3r9J-y_yTlalb7TMpvBxQm_?usp=sharing
+Model : https://colab.research.google.com/github/shreyash-99/EVA8/blob/main/Session_4_Assignment/Session%204%20Assignment%204%20of%204.ipynb#scrollTo=UxrzG8skLOW5
 
 Logs: 
 EPOCH: 0 Learning Rate:  [0.03]
