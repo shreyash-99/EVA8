@@ -554,3 +554,5 @@ EPOCH: 19 Learning Rate:  [4e-05]
 Loss=0.015707187354564667 Batch_id=468 Accuracy=99.01: 100%|██████████| 469/469 [00:17<00:00, 26.98it/s]
 
 Test set: Average loss: 0.0179, Accuracy: 9941/10000 (99.41%)
+
+<img src = "Session_4_Assignment/Receptive_field_calculation for 5th model .png">
