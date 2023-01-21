@@ -1,6 +1,8 @@
 # Solution of Session 4 ASsignment
 the answers in the assignments are not updated as i tried to attempt the question again and achieved the target which i wasnt able to achieve earlier.
 
+### Also achieved around 99.4% accuracy in 7.5k parameters in 5th attempt.
+
 ## 1st Attempt out of 4
 
 Target 
@@ -432,3 +434,123 @@ EPOCH: 19 Learning Rate:  [3.0000000000000004e-05]
 Loss=0.0030106117483228445 Batch_id=468 Accuracy=99.11: 100%|██████████| 469/469 [00:17<00:00, 26.44it/s]
 
 Test set: Average loss: 0.0182, Accuracy: 9947/10000 (99.47%)
+
+
+## 5th Attempt out of 4
+
+Target
+1. To reduce the parameters by reducing the channel size
+2. Tried to increase and decrease lr
+
+Results: 
+1. Parameters: 7.5k
+2. Best Test Accuracy: 99.45% (till 15th epoch)
+3. Best Train Accuracy: 98.97% (till 15th epoch)
+
+Conclusion:
+1. Achieved the working model(99.4 in 6th epoch itself). Changed the size of channels to make 1st and 2nd block similar.
+2. increasing the learning rate worked, i think it is because as the model was working for same lr(=0.3) but the results werent approached quickly and so increased the Learning Rate and the results were EXCELLENT.
+
+Model: https://colab.research.google.com/drive/1HPWIZeY2q3r9J-y_yTlalb7TMpvBxQm_?usp=sharing
+
+Logs: 
+
+EPOCH: 0 Learning Rate:  [0.04]
+Loss=0.1202450767159462 Batch_id=468 Accuracy=90.59: 100%|██████████| 469/469 [00:17<00:00, 26.78it/s]
+
+Test set: Average loss: 0.0808, Accuracy: 9739/10000 (97.39%)
+
+EPOCH: 1 Learning Rate:  [0.04]
+Loss=0.05749984458088875 Batch_id=468 Accuracy=97.49: 100%|██████████| 469/469 [00:17<00:00, 26.69it/s]
+
+Test set: Average loss: 0.0476, Accuracy: 9841/10000 (98.41%)
+
+EPOCH: 2 Learning Rate:  [0.04]
+Loss=0.06992447376251221 Batch_id=468 Accuracy=98.05: 100%|██████████| 469/469 [00:17<00:00, 26.27it/s]
+
+Test set: Average loss: 0.0327, Accuracy: 9898/10000 (98.98%)
+
+EPOCH: 3 Learning Rate:  [0.04]
+Loss=0.02567797712981701 Batch_id=468 Accuracy=98.20: 100%|██████████| 469/469 [00:17<00:00, 27.03it/s]
+
+Test set: Average loss: 0.0322, Accuracy: 9906/10000 (99.06%)
+
+EPOCH: 4 Learning Rate:  [0.04]
+Loss=0.02320181578397751 Batch_id=468 Accuracy=98.47: 100%|██████████| 469/469 [00:17<00:00, 27.32it/s]
+
+Test set: Average loss: 0.0247, Accuracy: 9916/10000 (99.16%)
+
+EPOCH: 5 Learning Rate:  [0.04]
+Loss=0.049136992543935776 Batch_id=468 Accuracy=98.39: 100%|██████████| 469/469 [00:17<00:00, 26.84it/s]
+
+Test set: Average loss: 0.0266, Accuracy: 9914/10000 (99.14%)
+
+EPOCH: 6 Learning Rate:  [0.004]
+Loss=0.005780770909041166 Batch_id=468 Accuracy=98.84: 100%|██████████| 469/469 [00:17<00:00, 26.52it/s]
+
+Test set: Average loss: 0.0193, Accuracy: 9940/10000 (99.40%)
+
+EPOCH: 7 Learning Rate:  [0.004]
+Loss=0.02239128202199936 Batch_id=468 Accuracy=98.89: 100%|██████████| 469/469 [00:17<00:00, 27.06it/s]
+
+Test set: Average loss: 0.0183, Accuracy: 9944/10000 (99.44%)
+
+EPOCH: 8 Learning Rate:  [0.004]
+Loss=0.0025257328525185585 Batch_id=468 Accuracy=98.92: 100%|██████████| 469/469 [00:17<00:00, 27.20it/s]
+
+Test set: Average loss: 0.0187, Accuracy: 9937/10000 (99.37%)
+
+EPOCH: 9 Learning Rate:  [0.004]
+Loss=0.012505347840487957 Batch_id=468 Accuracy=98.99: 100%|██████████| 469/469 [00:17<00:00, 26.80it/s]
+
+Test set: Average loss: 0.0184, Accuracy: 9940/10000 (99.40%)
+
+EPOCH: 10 Learning Rate:  [0.004]
+Loss=0.027832476422190666 Batch_id=468 Accuracy=98.97: 100%|██████████| 469/469 [00:17<00:00, 27.14it/s]
+
+Test set: Average loss: 0.0179, Accuracy: 9942/10000 (99.42%)
+
+EPOCH: 11 Learning Rate:  [0.004]
+Loss=0.00904789287596941 Batch_id=468 Accuracy=98.95: 100%|██████████| 469/469 [00:17<00:00, 26.95it/s]
+
+Test set: Average loss: 0.0181, Accuracy: 9940/10000 (99.40%)
+
+EPOCH: 12 Learning Rate:  [0.0004]
+Loss=0.013427689671516418 Batch_id=468 Accuracy=99.00: 100%|██████████| 469/469 [00:17<00:00, 26.87it/s]
+
+Test set: Average loss: 0.0179, Accuracy: 9938/10000 (99.38%)
+
+EPOCH: 13 Learning Rate:  [0.0004]
+Loss=0.023236772045493126 Batch_id=468 Accuracy=99.00: 100%|██████████| 469/469 [00:18<00:00, 25.45it/s]
+
+Test set: Average loss: 0.0183, Accuracy: 9935/10000 (99.35%)
+
+EPOCH: 14 Learning Rate:  [0.0004]
+Loss=0.04036524146795273 Batch_id=468 Accuracy=99.00: 100%|██████████| 469/469 [00:17<00:00, 26.54it/s]
+
+Test set: Average loss: 0.0172, Accuracy: 9945/10000 (99.45%)
+
+EPOCH: 15 Learning Rate:  [0.0004]
+Loss=0.007124283816665411 Batch_id=468 Accuracy=98.99: 100%|██████████| 469/469 [00:17<00:00, 26.70it/s]
+
+Test set: Average loss: 0.0179, Accuracy: 9944/10000 (99.44%)
+
+EPOCH: 16 Learning Rate:  [0.0004]
+Loss=0.018567416816949844 Batch_id=468 Accuracy=99.03: 100%|██████████| 469/469 [00:17<00:00, 26.99it/s]
+
+Test set: Average loss: 0.0171, Accuracy: 9948/10000 (99.48%)
+
+EPOCH: 17 Learning Rate:  [0.0004]
+Loss=0.015918608754873276 Batch_id=468 Accuracy=99.03: 100%|██████████| 469/469 [00:17<00:00, 26.95it/s]
+
+Test set: Average loss: 0.0178, Accuracy: 9943/10000 (99.43%)
+
+EPOCH: 18 Learning Rate:  [4e-05]
+Loss=0.009703991003334522 Batch_id=468 Accuracy=98.99: 100%|██████████| 469/469 [00:17<00:00, 27.14it/s]
+
+Test set: Average loss: 0.0176, Accuracy: 9942/10000 (99.42%)
+
+EPOCH: 19 Learning Rate:  [4e-05]
+Loss=0.015707187354564667 Batch_id=468 Accuracy=99.01: 100%|██████████| 469/469 [00:17<00:00, 26.98it/s]
+
+Test set: Average loss: 0.0179, Accuracy: 9941/10000 (99.41%)
