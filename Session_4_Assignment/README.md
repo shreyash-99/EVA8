@@ -1,7 +1,7 @@
 # Solution of Session 4 ASsignment
 the answers in the assignments are not updated as i tried to attempt the question again and achieved the target which i wasnt able to achieve earlier.
 
-### Also achieved around 99.4% accuracy in 7.5k parameters in 5th attempt.
+### completed the BONUS as well, reached 99.4% accuracy in 7.5k parameters.
 
 ## 1st Attempt out of 4
 
