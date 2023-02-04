@@ -13,7 +13,7 @@ dropout_value = 0.07
 ###### MODEL WITH BATCH NORMALISATION
 class BN_model(nn.Module):
   def __init__(self):
-    super(Net, self).__init__()
+    super(BN_model, self).__init__()
     ## INPUT BLOCK (BLOCK  1 )
     self.conv1 = nn.Sequential(
         nn.Conv2d(in_channels = 1, out_channels = 8, kernel_size = (3,3), bias = False),
@@ -96,7 +96,7 @@ class BN_model(nn.Module):
 ##### Model for LAYER NORMALISATION
 class LN_model(nn.Module):
   def __init__(self):
-    super(Net, self).__init__()
+    super(LN_model, self).__init__()
     ## INPUT BLOCK (BLOCK  1 )
     self.conv1 = nn.Sequential(
         nn.Conv2d(in_channels = 1, out_channels = 8, kernel_size = (3,3), bias = False),
@@ -181,7 +181,7 @@ class LN_model(nn.Module):
 
 class GN_model(nn.Module):
   def __init__(self):
-    super(Net, self).__init__()
+    super(GN_model, self).__init__()
     ## INPUT BLOCK (BLOCK  1 )
     self.conv1 = nn.Sequential(
         nn.Conv2d(in_channels = 1, out_channels = 8, kernel_size = (3,3), bias = False),
