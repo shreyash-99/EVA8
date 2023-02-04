@@ -9,6 +9,17 @@ from torchvision import datasets, transforms
 
 dropout_value = 0.07
 
+def get_model(normalisation_type):
+    if(normalisation_type == "BN"):
+        return BN_model()
+    elif(normalisation_type == "LN"):
+        return LN_model()
+    elif(normalisation_type == "GN"):
+        return GN_model()
+    else:
+        raise ValueError("Normlization has to be one of BN/LN/GN")
+
+
 
 ###### MODEL WITH BATCH NORMALISATION
 class BN_model(nn.Module):
@@ -262,12 +273,3 @@ class GN_model(nn.Module):
     return F.log_softmax(x, dim = -1)
 
 
-def get_model(normalisation_type):
-    if(normalisation_type == "BN"):
-        return BN_model()
-    elif(normalisation_type == "LN"):
-        return LN_model()
-    elif(normalisation_type == "GN"):
-        return GN_model()
-    else:
-        raise ValueError("Normlization has to be one of BN/LN/GN")
