@@ -43,21 +43,21 @@ Results:
 Best Train accuracy:99.32%
 Best Test Accuracy:99.43%
 
-Mismatched Pictures: <img src = "Session_5_Assignment/Images/GN_misclassified_img.png">
+Mismatched Pictures: <img src = "Images/GN_misclassified_img.png">
  #### Results for only Layer Normalisation
 Results:
 Best Train accuracy:99.42%
 Best Test Accuracy:99.56%  
-this might be cause of the increase in the size of the model 
-Mismatched Pictures: <img src = "Session_5_Assignment/Images/LN_misclassified_img.png">
+This might be cause of the increase in the size of the model </br>
+Mismatched Pictures: <img src = "Images/LN_misclassified_img.png">
    
  #### Results for Batch Normalisation + L1 regularisation(10%)
 Results:
 Best Train accuracy:99.31%
 Best Test Accuracy:99.44%
 
-Mismatched Pictures: <img src = "Session_5_Assignment/Images/BN_misclassified_img.png">
+Mismatched Pictures: <img src = "Images/BN_misclassified_img.png">
 
 ## Comparison of Accuracies and Losses 
-<img src = "Session_5_Assignment/Images/test_loss_comparison.png">
-<img src = "Session_5_Assignment/Images/test_acc_comparison.png">
+<img src = "Images/test_loss_comparison.png">
+<img src = "Images/test_acc_comparison.png">
