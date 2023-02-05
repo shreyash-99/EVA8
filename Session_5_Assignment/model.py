@@ -136,7 +136,7 @@ class LN_model(nn.Module):
     self.conv5 = nn.Sequential(
         nn.Conv2d(in_channels = 16, out_channels = 16, kernel_size = (3,3), padding = 1, bias = False),
         nn.ReLU(),# input - 11 , output = 11
-        nn.LayerNorm([16,11,1]),
+        nn.LayerNorm([16,11,11]),
         nn.Dropout(dropout_value)
     )
     #   TRANSITION BLOCK 
