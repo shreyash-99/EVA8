@@ -34,27 +34,27 @@ in a each image. When doing Batch Normalisation for each channel, mean and stand
  #### Results for only Batch Normalisation
  All logs in the python notebbook file
  Results:
- Best Train accuracy:99.21%
- Best Test Accuracy:99.50%
+ 1. Best Train accuracy:99.21%
+ 2. Best Test Accuracy:99.50%
  
  
  #### Results for only Group Normalisation
 Results:
-Best Train accuracy:99.32%
-Best Test Accuracy:99.43%
+1. Best Train accuracy:99.32%
+2. Best Test Accuracy:99.43%
 
 Mismatched Pictures: <img src = "Images/GN_misclassified_img.png">
  #### Results for only Layer Normalisation
 Results:
-Best Train accuracy:99.42%
-Best Test Accuracy:99.56%  
+1. Best Train accuracy:99.42%
+2. Best Test Accuracy:99.56%  
 This might be cause of the increase in the size of the model </br>
 Mismatched Pictures: <img src = "Images/LN_misclassified_img.png">
    
  #### Results for Batch Normalisation + L1 regularisation(10%)
 Results:
-Best Train accuracy:99.31%
-Best Test Accuracy:99.44%
+1. Best Train accuracy:99.31%
+2. Best Test Accuracy:99.44%
 
 Mismatched Pictures: <img src = "Images/BN_misclassified_img.png">
 
