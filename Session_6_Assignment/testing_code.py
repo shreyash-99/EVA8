@@ -1,5 +1,8 @@
 from tqdm import tqdm
 import torch
+import torch.nn.functional as F
+import torch.optim as optim
+import matplotlib.pyplot as plt
 
 
 
@@ -34,4 +37,19 @@ class test:
             100. * correct / len(testloader.dataset)))
 
         # Save.
-        self.test_accuracies.append(100. * correct / len(testloader.dataset))            
+        self.test_accuracies.append(100. * correct / len(testloader.dataset))  
+        self.test_losses.append(loss_this_epoch)     
+
+    def compute_accuracy_graph(self):
+        plt.plot(self.test_accuracies)
+        plt.xlabel('Epochs')
+        plt.ylabel('Accuracy')
+        plt.title("Epoch vs Accuracy while Testing")
+        plt.legend()
+
+    def compute_loss_graph(self):
+        plt.plot(self.test_losses)
+        plt.xlabel('Epochs')
+        plt.ylabel('Loss')
+        plt.title("Epoch vs Accuracy while Testing")
+        plt.legend()     
