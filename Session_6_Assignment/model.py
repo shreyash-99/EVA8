@@ -15,8 +15,9 @@ def get_model_summary(model, device, image_dimensions):
     model = model.to(device)
     summary(model, input_size = image_dimensions)
 
+
 class Net(nn.Module):
-    def __init__(self):
+    def __init__(self, dropout_value = 0.07):
         super(Net, self).__init__()
         # self.conv1 = nn.Conv2d(3, 6, 5)
         # self.pool = nn.MaxPool2d(2, 2)
