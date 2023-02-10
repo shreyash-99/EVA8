@@ -7,8 +7,8 @@ import torchsummary
 from torchsummary import summary
 
 
-def get_model():
-    return Net()
+def get_model(dropout_value = 0.07):
+    return Net(dropout_value)
 
 
 def get_model_summary(model, device, image_dimensions):
@@ -17,7 +17,7 @@ def get_model_summary(model, device, image_dimensions):
 
 
 class Net(nn.Module):
-    def __init__(self, dropout_value = 0.07):
+    def __init__(self, dropout_value):
         super(Net, self).__init__()
         # self.conv1 = nn.Conv2d(3, 6, 5)
         # self.pool = nn.MaxPool2d(2, 2)
@@ -47,7 +47,7 @@ class Net(nn.Module):
             nn.Conv2d(in_channels = 64, out_channels = 128, kernel_size = (1,1))
         )
         self.transition1 = nn.Sequential(
-            nn.Conv2d(in_channels = 32,out_channels = 32,kernel_size = (3,3), dilation = 8)
+            nn.Conv2d(in_channels = 128,out_channels = 32,kernel_size = (3,3), dilation = 8)
         )
         
         self.conv3 = nn.Sequential(
