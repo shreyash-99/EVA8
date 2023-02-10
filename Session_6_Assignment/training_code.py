@@ -17,8 +17,8 @@ class train:
     def execute_training(self, model, trainloader, device, optimiser, criterion, epoch):
         model.train()
         if epoch == 0:
-            self.train_accuracies = [0] * 50
-            self.train_losses = [0] * 50
+            self.train_accuracies = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            self.train_losses = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         correct = 0
         processed = 0
         pbar = tqdm(trainloader)
