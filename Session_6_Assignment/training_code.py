@@ -43,17 +43,9 @@ class train:
 
             # Backpropagation
             loss.backward()
-            optimizer.step()
+            optimiser.step()
 
             train_loss += loss.item()
-            
-            _, predicted = outputs.max(1)
-            processed += targets.size(0)
-            correct += predicted.eq(targets).sum().item()
-
-            pbar.set_description(desc= f'Epoch: {epoch},Loss={loss.item():3.2f} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
-            self.train_acc.append(100*correct/processed)  
-
 
             pred = y_pred.argmax(dim = 1, keepdim = True) # gets the index of the max log-probabilirty
             correct += pred.eq(target.view_as(pred)).sum().item()
