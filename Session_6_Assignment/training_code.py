@@ -16,9 +16,9 @@ class train:
 
     def execute_training(self, model, trainloader, device, optimiser, criterion, epoch):
         model.train()
-        if epoch == 0:
-            self.train_accuracies = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-            self.train_losses = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        # if epoch == 0:
+        #     self.train_accuracies = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        #     self.train_losses = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         correct = 0
         processed = 0
         pbar = tqdm(trainloader)
@@ -53,7 +53,6 @@ class train:
             training_acc_this_epoch += 100 * pred.eq(target.view_as(pred)).sum().item()/ len(data)
             training_loss_this_epoch += loss
 
-        # self.train_accuracies[epoch] = 100 * correct / processed
-        # self.train_losses[epoch] = training_loss_this_epoch
+        
 
 
