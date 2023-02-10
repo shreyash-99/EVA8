@@ -112,13 +112,13 @@ class LN_model(nn.Module):
     self.conv1 = nn.Sequential(
         nn.Conv2d(in_channels = 1, out_channels = 8, kernel_size = (3,3), bias = False),
         nn.ReLU(),
-        nn.LayerNorm([8,26,26]),
+        nn.LayerNorm([8,26,26],elementwise_affine=False),
         nn.Dropout(dropout_value)   
     )# input - 28, output - 26
     self.conv2 = nn.Sequential(
         nn.Conv2d(in_channels = 8, out_channels = 16, kernel_size = (3,3), padding = 1, bias = False),
         nn.ReLU(),
-        nn.LayerNorm([16,26,26]),
+        nn.LayerNorm([16,26,26],elementwise_affine=False),
         nn.Dropout(dropout_value)
     )#input - 26 , output - 26
     # TRANSITION BLOCK 
@@ -130,13 +130,13 @@ class LN_model(nn.Module):
     self.conv4 = nn.Sequential(
         nn.Conv2d(in_channels = 8, out_channels = 16 , kernel_size = (3,3), bias = False),
         nn.ReLU(),#input = 13 , output  = 11
-        nn.LayerNorm([16,11,11]),
+        nn.LayerNorm([16,11,11],elementwise_affine=False),
         nn.Dropout(dropout_value)
     )
     self.conv5 = nn.Sequential(
         nn.Conv2d(in_channels = 16, out_channels = 16, kernel_size = (3,3), padding = 1, bias = False),
         nn.ReLU(),# input - 11 , output = 11
-        nn.LayerNorm([16,11,11]),
+        nn.LayerNorm([16,11,11],elementwise_affine=False),
         nn.Dropout(dropout_value)
     )
     #   TRANSITION BLOCK 
@@ -147,19 +147,19 @@ class LN_model(nn.Module):
     self.conv7 = nn.Sequential(
         nn.Conv2d(in_channels = 8, out_channels = 8 , kernel_size = (3,3),bias = False),
         nn.ReLU(),#input = 11, output = 9
-        nn.LayerNorm([8,9,9]),
+        nn.LayerNorm([8,9,9],elementwise_affine=False),
         nn.Dropout(dropout_value)
     )
     self.conv8 = nn.Sequential(
         nn.Conv2d(in_channels= 8, out_channels = 16, kernel_size = (3,3), bias = False),
         nn.ReLU(),#input = 9, output = 7
-        nn.LayerNorm([16,7,7]),
+        nn.LayerNorm([16,7,7],elementwise_affine=False),
         nn.Dropout(dropout_value)
     )
     self.conv9 = nn.Sequential(
         nn.Conv2d(in_channels = 16, out_channels = 16, kernel_size = (3,3), bias = False),
         nn.ReLU(),
-        nn.LayerNorm([16,5,5]),
+        nn.LayerNorm([16,5,5],elementwise_affine=False),
         nn.Dropout(dropout_value) 
     )#input - 7 , output - 5 
     #      CONVOLUTION BLOCK 4

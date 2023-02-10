@@ -15,7 +15,7 @@ class test:
         with torch.no_grad():
             for batch_idx, (inputs, targets) in enumerate(testloader):
                 inputs, targets = inputs.to(device), targets.to(device)
-                outputs = net(inputs)
+                outputs = model(inputs)
                 loss = criterion(outputs, targets)
 
                 test_loss += loss.item()
