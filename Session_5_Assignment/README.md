@@ -56,7 +56,7 @@ Results:
 1. Best Train accuracy:99.11%
 2. Best Test Accuracy:99.42%
 
-Mismatched Pictures: <img src = "Images/BN_misclassified_img.png">
+Mismatched Pictures: <img src = "Images/BN_misclassified-20imgs.png">
 
 ## Comparison of Accuracies and Losses 
 <img src = "Images/train_loss_comparison_updated.png">
