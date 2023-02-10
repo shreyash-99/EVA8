@@ -31,7 +31,7 @@ in a each image. When doing Batch Normalisation for each channel, mean and stand
  each batch is divided in different image and each image(comprising of many channels) is divided in different group(a new parameter: Group size(number of channels per group))
  and for each group mean and std dev are calculated separately and utilised.
  
- #### Results for only Batch Normalisation
+ #### Results for only Batch Normalisation(previous assignment)
  All logs in the python notebbook file
  Results:
  1. Best Train accuracy:99.21%
