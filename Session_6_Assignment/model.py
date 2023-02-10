@@ -106,4 +106,3 @@ class Net(nn.Module):
         x = self.fc3(x)
         return x
 
-        return x

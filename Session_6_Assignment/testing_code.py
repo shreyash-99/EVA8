@@ -7,10 +7,13 @@ class test:
     def __init__(self):
 
         self.test_losses = []
-        self.test_acc    = []      
+        self.test_accuracies= []      
 
-    def execute(self, model, device, testloader, criterion):
+    def execute(self, model, testloader, device, criterion):
         model.eval()
+        loss_this_epoch = 0
+        correct = 0
+        total = 0
 
         with torch.no_grad():
             for batch_idx, (inputs, targets) in enumerate(testloader):
@@ -18,17 +21,17 @@ class test:
                 outputs = model(inputs)
                 loss = criterion(outputs, targets)
 
-                test_loss += loss.item()
+                loss_this_epoch += loss.item()
                 _, predicted = outputs.max(1)
                 total += targets.size(0)
                 correct += predicted.eq(targets).sum().item()
 
-        test_loss /= len(testloader.dataset)
-        self.test_losses.append(test_loss)
+        loss_this_epoch /= len(testloader.dataset)
+        self.test_losses.append(loss_this_epoch)
 
         print('Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
-            test_loss, correct, len(testloader.dataset),
+            loss_this_epoch, correct, len(testloader.dataset),
             100. * correct / len(testloader.dataset)))
 
         # Save.
-        self.test_acc.append(100. * correct / len(testloader.dataset))            
+        self.test_accuracies.append(100. * correct / len(testloader.dataset))            
