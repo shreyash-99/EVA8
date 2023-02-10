@@ -13,7 +13,7 @@ def get_model():
 
 def get_model_summary(model, device, image_dimensions):
     model = model.to(device)
-    summary(model, input_size = (3,32,32))
+    summary(model, input_size = image_dimensions)
 
 class Net(nn.Module):
     def __init__(self):
