@@ -40,24 +40,26 @@ in a each image. When doing Batch Normalisation for each channel, mean and stand
  
  #### Results for only Group Normalisation
 Results:
-1. Best Train accuracy:99.32%
-2. Best Test Accuracy:99.43%
+1. Best Train accuracy:99.34%
+2. Best Test Accuracy:99.48%
 
-Mismatched Pictures: <img src = "Images/GN_misclassified_img.png">
+Mismatched Pictures: <img src = "Images/GN_misclassified-20imgs.png">
  #### Results for only Layer Normalisation
 Results:
-1. Best Train accuracy:99.42%
-2. Best Test Accuracy:99.56%  
-This might be cause of the increase in the size of the model </br>
-Mismatched Pictures: <img src = "Images/LN_misclassified_img.png">
+1. Best Train accuracy:99.25%
+2. Best Test Accuracy:99.46%  
+
+Mismatched Pictures: <img src = "Images/LN_misclassified-20imgs.png">
    
  #### Results for Batch Normalisation + L1 regularisation(10%)
 Results:
-1. Best Train accuracy:99.31%
-2. Best Test Accuracy:99.44%
+1. Best Train accuracy:99.11%
+2. Best Test Accuracy:99.42%
 
 Mismatched Pictures: <img src = "Images/BN_misclassified_img.png">
 
 ## Comparison of Accuracies and Losses 
-<img src = "Images/test_loss_comparison.png">
-<img src = "Images/test_acc_comparison.png">
+<img src = "Images/train_loss_comparison_updated.png">
+<img src = "Images/train_accuracy_comparison_updated.png">
+<img src = "Images/test_loss_comparison_updated.png">
+<img src = "Images/test_accuracy_comparison_updated.png">
