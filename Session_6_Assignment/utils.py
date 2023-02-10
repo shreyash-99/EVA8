@@ -25,3 +25,18 @@ def plot_misclassified_images(model, test_loader, device):
         sub.set_title("Correct class: {}\nPredicted class: {}".format(misclassified_image['correct_class'], misclassified_image['predicted_class']))
     plt.tight_layout()
     plt.show()
+
+
+def compute_accuracy_graph(accuracies):
+    plt.plot(accuracies)
+    plt.xlabel('Epochs')
+    plt.ylabel('Accuracy')
+    plt.title("Epoch vs Accuracy")
+    plt.legend()
+
+def compute_loss_graph(losses):
+    plt.plot(losses)
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.title("Epoch vs Accuracy")
+    plt.legend()

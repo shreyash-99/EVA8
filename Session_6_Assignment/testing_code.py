@@ -12,7 +12,7 @@ class test:
         self.test_losses = []
         self.test_accuracies= []      
 
-    def execute(self, model, testloader, device, criterion):
+    def execute(self, model, testloader, device, criterion, epoch):
         model.eval()
         loss_this_epoch = 0
         correct = 0
