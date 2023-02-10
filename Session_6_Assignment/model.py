@@ -11,9 +11,9 @@ def get_model(dropout_value = 0.07):
     return Net(dropout_value)
 
 
-def get_model_summary(model, device, image_dimensions):
-    model = model.to(device)
-    summary(model, input_size = image_dimensions)
+def get_model_summary(model, device):
+    # model = model.to(device)
+    summary(model, input_size = (3,32,32))
 
 
 class Net(nn.Module):
@@ -89,10 +89,10 @@ class Net(nn.Module):
 
 
     def forward(self, x):
-        # x = self.transition1(self.conv2(self.conv1(x)))
-        # x = self.transition2(self.conv4(self.conv3(x)))
-        # x = self.transition3(self.conv6(self.conv5(x)))
-        # x = self.gap(x)
-        # x = x.view(-1,64)
-        # x = self.fc(x)
+        x = self.transition1(self.conv2(self.conv1(x)))
+        x = self.transition2(self.conv4(self.conv3(x)))
+        x = self.transition3(self.conv6(self.conv5(x)))
+        x = self.gap(x)
+        x = x.view(-1,64)
+        x = self.fc(x)
         return x
