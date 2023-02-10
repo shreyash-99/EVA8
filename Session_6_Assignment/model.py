@@ -91,8 +91,8 @@ class Net(nn.Module):
     def forward(self, x):
         x = self.transition1(self.conv2(self.conv1(x)))
         x = self.transition2(self.conv4(self.conv3(x)))
-        x = self.transition3(self.conv6(self.conv5(x)))
-        x = self.gap(x)
-        x = x.view(-1,64)
-        x = self.fc(x)
+        # x = self.transition3(self.conv6(self.conv5(x)))
+        # x = self.gap(x)
+        # x = x.view(-1,64)
+        # x = self.fc(x)
         return x
