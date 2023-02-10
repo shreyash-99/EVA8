@@ -96,6 +96,3 @@ class Net(nn.Module):
         x = x.view(-1,64)
         x = self.fc(x)
         return x
-
-
-net = Net()
