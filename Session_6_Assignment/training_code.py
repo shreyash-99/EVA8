@@ -7,6 +7,7 @@ import torch.optim as optim
 import matplotlib.pyplot as plt
 
 
+
 class train:
     def __init__(self):
         
@@ -19,8 +20,8 @@ class train:
     def execute_training(self, model, trainloader, device, optimiser, criterion, epoch):
         model.train()
         if epoch == 0:
-            self.train_accuracies = []
-            self.train_losses = []
+            self.train_accuracies = [0] * 50
+            self.train_losses = [0] * 50
         train_loss = 0
         correct = 0
         #total = 0
@@ -38,7 +39,7 @@ class train:
             y_pred = model(data)
 
             #calculate loss
-            loss = F.nll_loss(y_pred, target)
+            loss = criterion(y_pred, target)
             self.train_losses.append(loss)
 
             # Backpropagation
@@ -54,8 +55,7 @@ class train:
             pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
             self.train_acc.append(100*correct/processed)
 
-            self.train_accuracies[epoch] = self.train_acc[-1]
-            self.train_losses[epoch] = self.train_loss[-1]
+        self.train_accuracies[epoch] = self.train_acc[-1]
+        self.train_losses[epoch] = self.train_loss[-1]
         return 
-            
 
