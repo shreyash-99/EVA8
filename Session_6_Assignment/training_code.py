@@ -52,8 +52,8 @@ class train:
             pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
             training_acc_this_epoch += 100 * pred.eq(target.view_as(pred)).sum().item()/ len(data)
 
-        self.train_accuracies[epoch] = 100*correct/processed
-        self.train_losses[epoch] = training_loss_this_epoch
+        # self.train_accuracies[epoch] = 100*correct/processed
+        # self.train_losses[epoch] = training_loss_this_epoch
 
         return 
 
