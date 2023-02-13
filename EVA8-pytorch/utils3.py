@@ -10,6 +10,9 @@ import albumentations as A
 
 from albumentations import Compose, PadIfNeeded, RandomCrop, Normalize, HorizontalFlip, ShiftScaleRotate, CoarseDropout
 from albumentations.pytorch.transforms import ToTensorV2
+import torch.nn.functional as F
+
+
 
 
 class Albumentation_cifar_Dataset(Dataset):
@@ -22,6 +25,7 @@ class Albumentation_cifar_Dataset(Dataset):
         A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=[0.4914*255, 0.4822*255, 0.4471*255], mask_fill_value=None),
         A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
         # A.ToGray()
+        ToTensorV2
       })
 
       self.norm = A.Compose({A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
