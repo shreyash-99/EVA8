@@ -10,8 +10,6 @@ import albumentations as A
 
 from albumentations import Compose, PadIfNeeded, RandomCrop, Normalize, HorizontalFlip, ShiftScaleRotate, CoarseDropout
 from albumentations.pytorch.transforms import ToTensorV2
-from data_loader import unnormalize
-
 
 class Albumentation_cifar_Dataset(Dataset):
   def __init__(self, image_list, train= True):
