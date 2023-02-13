@@ -23,7 +23,7 @@ def plot_misclassified_images(model, test_loader, classes, device , cols = 5 ,ro
                 if pred[i] != target[i]:
                     all_misclassified_images.append({'image': data[i], 'predicted_class': classes[pred[i]], 'correct_class': classes[target[i]]})
 
-    fig = plt.figure(figsize=(30,30))
+    fig = plt.figure(figsize=(10,10))
     for i in range(cols * rows):
         sub = fig.add_subplot(cols, rows, i+1)
         misclassified_image = all_misclassified_images[i]
