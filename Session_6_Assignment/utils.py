@@ -1,13 +1,17 @@
 # import necessary libraries
-import matplotlib.pyplot as plt
+!pip install -U albumentations
+%matplotlib inline
 import torch
+import torchvision
+import torchvision.transforms as transforms
+import albumentations as A
+from __future__ import print_function
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.optim as optim
 from torchvision import datasets, transforms
-import torchvision
 import numpy as np
-import cv2
-import os
+import matplotlib.pyplot as plt 
 
 # from data_loader import unnormalize
 
