@@ -3,18 +3,11 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 import albumentations as A
-from __future__ import print_function
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torchvision import datasets, transforms
 import numpy as np
 import matplotlib.pyplot as plt 
-import albumentations as A
-
-from albumentations import Compose, PadIfNeeded, RandomCrop, Normalize, HorizontalFlip, ShiftScaleRotate, CoarseDropout
-from albumentations.pytorch.transforms import ToTensorV2
-from data_loader import unnormalize
 
 # from data_loader import unnormalize
 
