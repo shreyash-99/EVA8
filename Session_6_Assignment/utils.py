@@ -1,6 +1,11 @@
 # import necessary libraries
 import matplotlib.pyplot as plt
 import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torchvision import datasets, transforms
+import torchvision
+
 # from data_loader import unnormalize
 
 def plot_misclassified_images(model, test_loader, device , cols = 5 ,rows = 4):
