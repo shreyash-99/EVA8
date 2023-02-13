@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import os
 
 import cv2
+import albumentations as A
 
 from albumentations import Compose, PadIfNeeded, RandomCrop, Normalize, HorizontalFlip, ShiftScaleRotate, CoarseDropout
 from albumentations.pytorch.transforms import ToTensorV2
@@ -21,3 +22,17 @@ def train_loader():
         ]
     )
 
+def info_about_dataset(exp, train = True):
+    exp_data = exp.data
+
+    # Calculate the mean and std for normalization
+    if train:
+        print("[Train")
+    else :
+        print("Test")
+    print(' - Numpy Shape:', exp_data.shape)
+    print(' - min:', np.min(exp_data, axis=(0,1,2)) / 255.)
+    print(' - max:', np.max(exp_data, axis=(0,1,2)) / 255.)
+    print(' - mean:', np.mean(exp_data, axis=(0,1,2)) / 255.)
+    print(' - std:', np.std(exp_data, axis=(0,1,2)) / 255.)
+    print(' - var:', np.var(exp_data, axis=(0,1,2)) / 255.)
