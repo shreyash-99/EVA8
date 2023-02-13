@@ -44,6 +44,14 @@ class Albumentation_cifar_Dataset(Dataset):
 
 
 
-
+def unnormalize(img):
+    channel_means = (0.4914, 0.4822, 0.4471)
+    channel_stdevs = (0.2469, 0.2433, 0.2615)
+    img = img.numpy().astype(dtype=np.float32)
+  
+    for i in range(img.shape[0]):
+         img[i] = (img[i]*channel_stdevs[i])+channel_means[i]
+  
+    return np.transpose(img, (1,2,0))
 
 
