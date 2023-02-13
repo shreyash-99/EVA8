@@ -127,7 +127,7 @@ def plot_misclassified_images(model, test_loader, classes, device , cols = 5 ,ro
     for i in range(cols * rows):
         sub = fig.add_subplot(cols, rows, i+1)
         misclassified_image = all_misclassified_images[i]
-        plt.imshow(unnormalize(misclassified_image['image'].cpu().numpy().squeeze()), cmap='gray', interpolation='none')
+        plt.imshow(misclassified_image['image'].cpu().permute(1,2,0).numpy().squeeze(), cmap='gray', interpolation='none')
         sub.set_title("Correct class: {}\nPredicted class: {}".format(misclassified_image['correct_class'], misclassified_image['predicted_class']))
     plt.tight_layout()
     plt.show()   
@@ -307,8 +307,8 @@ class GradCAM:
         weights = alpha.view(b, k, 1, 1)
 
         saliency_map = (weights*activations).sum(1, keepdim=True)
-        saliency_map = F.relu(saliency_map)
-        saliency_map = F.upsample(saliency_map, size=(h, w), mode='bilinear', align_corners=False)
+        saliency_map = torch.nn.functional.relu(saliency_map)
+        saliency_map = torch.nn.functional.upsample(saliency_map, size=(h, w), mode='bilinear', align_corners=False)
         saliency_map_min, saliency_map_max = saliency_map.min(), saliency_map.max()
         saliency_map = (saliency_map - saliency_map_min).div(saliency_map_max - saliency_map_min).data
 
