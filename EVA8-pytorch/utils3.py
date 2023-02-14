@@ -19,8 +19,8 @@ class Albumentation_cifar_Dataset(Dataset):
   def __init__(self, image_list, train= True):
       self.image_list = image_list
       self.aug = A.Compose({
-        A.PadIfNeeded(4),
-        A.RandomCrop(32,32),
+        # A.PadIfNeeded(4),
+        # A.RandomCrop(32,32),
         # A.ShiftScaleRotate(),
         # A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=[0.4914*255, 0.4822*255, 0.4471*255], mask_fill_value=None),
         A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
@@ -41,7 +41,7 @@ class Albumentation_cifar_Dataset(Dataset):
       
       if self.train:
         #apply augmentation only for training
-        image = self.aug(image=np.array(image))['image']
+        image = self.norm(image=np.array(image))['image']
       else:
         image = self.norm(image=np.array(image))['image']
       image = np.transpose(image, (2, 0, 1)).astype(np.float32)
