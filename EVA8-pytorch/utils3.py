@@ -24,7 +24,7 @@ class Albumentation_cifar_Dataset(Dataset):
         # A.ShiftScaleRotate(),
         A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=[0.4914*255, 0.4822*255, 0.4471*255], mask_fill_value=None),
         A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
-        A.ToGray()
+        # A.ToGray()
 
       })
 
@@ -90,7 +90,7 @@ def visualize_augmented_images(loader, classes, cols = 5, rows = 4):
     # Show images
     for idx in np.arange(len(labels.numpy())):
         ax = fig.add_subplot(cols, rows, idx+1, xticks=[], yticks=[])
-        npimg = images[idx].numpy().astype(dtype=np.float32).permute(1,2,0)
+        npimg = images[idx].permute(1,2,0).numpy().astype(dtype=np.float32)
         ax.imshow(npimg, cmap='gray')
         ax.set_title("Label={}".format(classes[labels[idx]]))
 
