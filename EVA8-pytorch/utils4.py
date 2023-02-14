@@ -21,7 +21,7 @@ class Albumentation_cifar_Dataset(Dataset):
       self.aug = A.Compose({
         A.PadIfNeeded(4),
         A.RandomCrop(32,32),
-        # A.ShiftScaleRotate(),
+        A.ShiftScaleRotate(),
         A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=[0.4914*255, 0.4822*255, 0.4471*255], mask_fill_value=None),
         A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
         A.ToGray()
@@ -341,7 +341,7 @@ def plotGradCAM(net, testloader, classes, device):
 
     fig = plt.figure(figsize=(10, 10))
     idx_cnt=1
-    for idx in np.arange(10):
+    for idx in np.arange(20):
 
         img = misclassified_images[idx]
         lbl = predicted_labels[idx]
@@ -360,19 +360,19 @@ def plotGradCAM(net, testloader, classes, device):
         # for idx in np.arange(len(labels.numpy())):
         # Original picture
         
-        ax = fig.add_subplot(5, 6, idx_cnt, xticks=[], yticks=[])
+        ax = fig.add_subplot(10, 6, idx_cnt, xticks=[], yticks=[])
         npimg = np.transpose(org_img[0].cpu().numpy(),(1,2,0))
         ax.imshow(npimg, cmap='gray')
         ax.set_title(f"Label={str(classes[lblp])}\npred={classes[lbl]}")
         idx_cnt+=1
 
-        ax = fig.add_subplot(5, 6, idx_cnt, xticks=[], yticks=[])
+        ax = fig.add_subplot(10, 6, idx_cnt, xticks=[], yticks=[])
         npimg = np.transpose(heatmap,(1,2,0))
         ax.imshow(npimg, cmap='gray')
         ax.set_title("HeatMap".format(str(classes[lbl])))
         idx_cnt+=1
 
-        ax = fig.add_subplot(5, 6, idx_cnt, xticks=[], yticks=[])
+        ax = fig.add_subplot(10, 6, idx_cnt, xticks=[], yticks=[])
         npimg = np.transpose(cam_result,(1,2,0))
         ax.imshow(npimg, cmap='gray')
         ax.set_title("GradCAM".format(str(classes[lbl])))
