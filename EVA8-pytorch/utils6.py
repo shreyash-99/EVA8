@@ -22,7 +22,8 @@ class Albumentation_cifar_Dataset(Dataset):
         A.PadIfNeeded(40),
         # A.RandomCrop(32,32),
         # A.ShiftScaleRotate(),
-        A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=[0.4914*255, 0.4822*255, 0.4471*255], mask_fill_value=None),
+        A.CoarseDropout(max_holes=1, max_height=16, max_width=16, min_holes=1, min_height=16, 
+                               min_width=16, fill_value=0.473363, mask_fill_value=None, always_apply=True),
         A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
         A.ToGray()
 
