@@ -90,7 +90,7 @@ def visualize_augmented_images(loader, classes, cols = 5, rows = 4):
     # Show images
     for idx in np.arange(len(labels.numpy())):
         ax = fig.add_subplot(cols, rows, idx+1, xticks=[], yticks=[])
-        npimg = unnormalize(images[idx])
+        npimg = images[idx].numpy().astype(dtype=np.float32).permute(1,2,0)
         ax.imshow(npimg, cmap='gray')
         ax.set_title("Label={}".format(classes[labels[idx]]))
 
