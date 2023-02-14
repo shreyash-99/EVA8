@@ -63,6 +63,102 @@ Information about the Main repo is in its README file.
 
 ## Training and Results:
 
-Training Curves: 
+#### Auggmented images
+![sample_augmented_pictures.png](./images/sample_augmented_pictures.png)
+
+
+#### Training Curves:
+![train_accuracy](./images/train_accuracy.png)
+![train_losses](./images/train_losses.png)
+
+#### Testing Curves:
+![test_accuracy](./images/test_accuracy.png)
+![test_losses](./images/test_losses.png)
+
+#### Misclassified images:
+![misclassified_imgs](./images/misclassified_imgs.png)
+
+#### GradCam output on 10 misclassified images:
+![gradcam_imgs](./images/grad-cam-imgs.png)
+
+#### Accuracies:
+Highest training accuracy: 82.16%
+Highest testing accuracy: 86.14%
+
+##### Accuracy class wise:
+1. Accuracy of plane : 82 %
+2. Accuracy of   car : 100 %
+3. Accuracy of  bird : 75 %
+4. Accuracy of   cat : 67 %
+5. Accuracy of  deer : 81 %
+6. Accuracy of   dog : 81 %
+7. Accuracy of  frog : 91 %
+8. Accuracy of horse : 92 %
+9. Accuracy of  ship : 90 %
+10. Accuracy of truck : 92 %
+
+#### Training Logs:
+
+Loss=1.2367753982543945 Batch_id=390 Accuracy=40.05: 100%|██████████| 391/391 [00:50<00:00,  7.76it/s]
+Test set: Average loss: 0.0096, Accuracy: 5588/10000 (55.88%)
+
+Loss=1.2701382637023926 Batch_id=390 Accuracy=55.84: 100%|██████████| 391/391 [00:48<00:00,  8.11it/s]
+Test set: Average loss: 0.0096, Accuracy: 5900/10000 (59.00%)
+
+Loss=1.1523507833480835 Batch_id=390 Accuracy=62.23: 100%|██████████| 391/391 [00:48<00:00,  8.09it/s]
+Test set: Average loss: 0.0066, Accuracy: 6987/10000 (69.87%)
+
+Loss=0.8869228363037109 Batch_id=390 Accuracy=66.77: 100%|██████████| 391/391 [00:48<00:00,  8.10it/s]
+Test set: Average loss: 0.0089, Accuracy: 6564/10000 (65.64%)
+
+Loss=0.9432547688484192 Batch_id=390 Accuracy=69.99: 100%|██████████| 391/391 [00:48<00:00,  8.09it/s]
+Test set: Average loss: 0.0056, Accuracy: 7556/10000 (75.56%)
+
+Loss=0.7091596722602844 Batch_id=390 Accuracy=72.45: 100%|██████████| 391/391 [00:48<00:00,  8.10it/s]
+Test set: Average loss: 0.0057, Accuracy: 7480/10000 (74.80%)
+
+Loss=0.6313072443008423 Batch_id=390 Accuracy=78.02: 100%|██████████| 391/391 [00:48<00:00,  8.10it/s]
+Test set: Average loss: 0.0037, Accuracy: 8411/10000 (84.11%)
+
+Loss=0.37528136372566223 Batch_id=390 Accuracy=79.18: 100%|██████████| 391/391 [00:48<00:00,  8.09it/s]
+Test set: Average loss: 0.0036, Accuracy: 8451/10000 (84.51%)
+
+Loss=0.7871106863021851 Batch_id=390 Accuracy=79.66: 100%|██████████| 391/391 [00:48<00:00,  8.06it/s]
+Test set: Average loss: 0.0036, Accuracy: 8488/10000 (84.88%)
+
+Loss=0.6526386737823486 Batch_id=390 Accuracy=80.10: 100%|██████████| 391/391 [00:48<00:00,  8.08it/s]
+Test set: Average loss: 0.0036, Accuracy: 8457/10000 (84.57%)
+
+Loss=0.6152591705322266 Batch_id=390 Accuracy=80.50: 100%|██████████| 391/391 [00:48<00:00,  8.06it/s]
+Test set: Average loss: 0.0034, Accuracy: 8528/10000 (85.28%)
+
+Loss=0.5228683948516846 Batch_id=390 Accuracy=80.73: 100%|██████████| 391/391 [00:48<00:00,  8.07it/s]
+Test set: Average loss: 0.0034, Accuracy: 8522/10000 (85.22%)
+
+Loss=0.49664026498794556 Batch_id=390 Accuracy=81.56: 100%|██████████| 391/391 [00:48<00:00,  8.03it/s]
+Test set: Average loss: 0.0033, Accuracy: 8584/10000 (85.84%)
+
+Loss=0.49911370873451233 Batch_id=390 Accuracy=81.84: 100%|██████████| 391/391 [00:48<00:00,  8.07it/s]
+Test set: Average loss: 0.0033, Accuracy: 8603/10000 (86.03%)
+
+Loss=0.4738570749759674 Batch_id=390 Accuracy=81.92: 100%|██████████| 391/391 [00:49<00:00,  7.92it/s]
+Test set: Average loss: 0.0033, Accuracy: 8606/10000 (86.06%)
+
+Loss=0.43995141983032227 Batch_id=390 Accuracy=81.98: 100%|██████████| 391/391 [00:49<00:00,  7.83it/s]
+Test set: Average loss: 0.0033, Accuracy: 8614/10000 (86.14%)
+
+Loss=0.4017840325832367 Batch_id=390 Accuracy=81.94: 100%|██████████| 391/391 [00:49<00:00,  7.85it/s]
+Test set: Average loss: 0.0033, Accuracy: 8614/10000 (86.14%)
+
+Loss=0.4330795407295227 Batch_id=390 Accuracy=81.87: 100%|██████████| 391/391 [00:49<00:00,  7.88it/s]
+Test set: Average loss: 0.0033, Accuracy: 8616/10000 (86.16%)
+
+Loss=0.4703265130519867 Batch_id=390 Accuracy=82.16: 100%|██████████| 391/391 [00:49<00:00,  7.86it/s]
+Test set: Average loss: 0.0033, Accuracy: 8602/10000 (86.02%)
+
+Loss=0.5491556525230408 Batch_id=390 Accuracy=81.94: 100%|██████████| 391/391 [00:49<00:00,  7.86it/s]
+Test set: Average loss: 0.0033, Accuracy: 8612/10000 (86.12%)
+
+Finished Training
 
 
