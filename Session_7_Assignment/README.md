@@ -53,4 +53,16 @@
 ## Solution
 
 We implement Resnet18 on cifar dataset using different albumentation tranforms and keeping every part of the data separately in different codes. I first 
-cloned the 
+cloned the `EVA8-pytorch` folder inside the python notebook and then import all the methods from the main, model and utils folder and used them. I loaded the CIFAR10 image dataset in a dataset and them them passed them to the dataloader via the albumentation transforms library. Then passed the train dataset over the resnet model and plot the misclassified images as well as the grad cam on these images.
+
+## File Structure
+
+[Main repo - Which contains all the models and the helper files](https://github.com/shreyash-99/EVA8/tree/main/EVA8-pytorch)
+
+Information about the Main repo is in its README file.
+
+## Training and Results:
+
+Training Curves: 
+
+
