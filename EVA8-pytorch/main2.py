@@ -4,7 +4,7 @@ import torch
 import torch.optim as optim
 from torch.optim.lr_scheduler import StepLR
 import torch.nn as nn
-
+import matplotlib.pyplot as plt
 
 class train:
     def __init__(self):
@@ -49,7 +49,7 @@ class train:
 
             pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
             training_acc_this_epoch += 100. * pred.eq(target.view_as(pred)).sum().item() / len(data)
-            training_loss_this_epoch += loss
+            training_loss_this_epoch += loss.item()
         self.train_accuracies.append(100. * correct / processed)
         self.train_losses.append(training_loss_this_epoch)
     
