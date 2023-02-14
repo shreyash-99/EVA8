@@ -76,7 +76,7 @@ Information about the Main repo is in its README file.
 ![test_losses](./images/test_losses.png)
 
 #### Misclassified images:
-![misclassified_imgs](./images/misclassified_imgs.png)
+![misclassified_imgs](./images/misclassified-imgs.png)
 
 #### GradCam output on 10 misclassified images:
 ![gradcam_imgs](./images/grad-cam-imgs.png)
