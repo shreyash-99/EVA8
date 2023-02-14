@@ -342,7 +342,7 @@ def plotGradCAM(net, testloader, classes, device):
 
     fig = plt.figure(figsize=(10, 10))
     idx_cnt=1
-    for idx in np.arange(20):
+    for idx in np.arange(10):
 
         img = misclassified_images[idx]
         lbl = predicted_labels[idx]
@@ -361,19 +361,19 @@ def plotGradCAM(net, testloader, classes, device):
         # for idx in np.arange(len(labels.numpy())):
         # Original picture
         
-        ax = fig.add_subplot(10, 6, idx_cnt, xticks=[], yticks=[])
+        ax = fig.add_subplot(5, 6, idx_cnt, xticks=[], yticks=[])
         npimg = np.transpose(org_img[0].cpu().numpy(),(1,2,0))
         ax.imshow(npimg, cmap='gray')
         ax.set_title(f"Label={str(classes[lblp])}\npred={classes[lbl]}")
         idx_cnt+=1
 
-        ax = fig.add_subplot(10, 6, idx_cnt, xticks=[], yticks=[])
+        ax = fig.add_subplot(5, 6, idx_cnt, xticks=[], yticks=[])
         npimg = np.transpose(heatmap,(1,2,0))
         ax.imshow(npimg, cmap='gray')
         ax.set_title("HeatMap".format(str(classes[lbl])))
         idx_cnt+=1
 
-        ax = fig.add_subplot(10, 6, idx_cnt, xticks=[], yticks=[])
+        ax = fig.add_subplot(5, 6, idx_cnt, xticks=[], yticks=[])
         npimg = np.transpose(cam_result,(1,2,0))
         ax.imshow(npimg, cmap='gray')
         ax.set_title("GradCAM".format(str(classes[lbl])))
