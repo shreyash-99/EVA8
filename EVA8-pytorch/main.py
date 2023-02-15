@@ -23,6 +23,8 @@ class train:
         training_loss_this_epoch = 0
         training_acc_this_epoch = 0
 
+        print("EPOCH: {} (LR: {})".format(epoch, optimiser.param_groups[0]['lr']))
+
         for batch_idx, (data, target) in enumerate(pbar):
             #get samples
             data, target = data.to(device), target.to(device)
@@ -117,10 +119,10 @@ class test:
         plt.legend()     
 
 
-def train_network(model, device, trainloader, testloader, EPOCHS, criterion = nn.CrossEntropyLoss(), lr=0.2, momentum = 0.9):
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr, momentum)
-    scheduler = StepLR(optimizer, step_size=6, gamma=0.1)
+def train_network(model, device, trainloader, testloader, EPOCHS, optimizer, criterion, scheduler  = None):
+    criterion = criterion
+    optimizer = optimizer
+    scheduler = scheduler
 
     trainObj = train()
     testObj = test()
