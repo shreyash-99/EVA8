@@ -20,7 +20,7 @@ class Albumentation_cifar_Dataset(Dataset):
       self.image_list = image_list
       self.aug = A.Compose({
         A.PadIfNeeded(min_height=36, min_width=36, border_mode=0, value=[0, 0, 0]),
-        A.RandomCrop(width = 32,heigth = 32),
+        A.RandomCrop(width = 32,height = 32),
         # A.ShiftScaleRotate(),
         A.HorizontalFlip(p=0.5),
         A.CoarseDropout(max_holes=1, max_height=8, max_width=8, min_holes=1, min_height=8, 
