@@ -13,6 +13,7 @@ class train:
         self.train_losses = []
 
     def execute(self, model, trainloader, device, optimiser, criterion, epoch):
+        print("EPOCH: {} (LR: {})".format(epoch, optimiser.param_groups[0]['lr']))
         model.train()
         # if epoch == 0:
         #     self.train_accuracies = []
@@ -22,8 +23,6 @@ class train:
         pbar = tqdm(trainloader)
         training_loss_this_epoch = 0
         training_acc_this_epoch = 0
-
-        print("EPOCH: {} (LR: {})".format(epoch, optimiser.param_groups[0]['lr']))
 
         for batch_idx, (data, target) in enumerate(pbar):
             #get samples
@@ -128,7 +127,7 @@ def train_network(model, device, trainloader, testloader, EPOCHS, optimizer, cri
     testObj = test()
 
     for epoch in range(EPOCHS):  # loop over the dataset multiple times
-
+        
         trainObj.execute(model, trainloader, device, optimizer, criterion, epoch)
         testObj.execute(model, testloader, device, criterion, epoch)
         scheduler.step()
