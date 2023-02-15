@@ -19,7 +19,7 @@ class Albumentation_cifar_Dataset(Dataset):
   def __init__(self, image_list, train= True):
       self.image_list = image_list
       self.aug = A.Compose({
-        A.PadIfNeeded(min_height=36, min_width=36, border_mode=0, value=[0, 0, 0]),
+        A.PadIfNeeded(min_height=36, min_width=36, border_mode=0, value=[0.49139968, 0.48215841, 0.44653091]),
         A.RandomCrop(width = 32,height = 32),
         # A.ShiftScaleRotate(),
         A.HorizontalFlip(p=0.5),
