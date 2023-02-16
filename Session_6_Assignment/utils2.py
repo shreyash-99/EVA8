@@ -27,7 +27,7 @@ def plot_misclassified_images(model, test_loader, classes, device , cols = 5 ,ro
     for i in range(cols * rows):
         sub = fig.add_subplot(cols, rows, i+1)
         misclassified_image = all_misclassified_images[i]
-        plt.imshow(unnormalize(misclassified_image['image'].cpu().numpy().squeeze()), cmap='gray', interpolation='none')
+        plt.imshow(misclassified_image['image'].cpu().permute(1,2,0).numpy().squeeze(), cmap='gray', interpolation='none')
         sub.set_title("Correct class: {}\nPredicted class: {}".format(misclassified_image['correct_class'], misclassified_image['predicted_class']))
     plt.tight_layout()
     plt.show()
