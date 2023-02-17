@@ -13,7 +13,7 @@ class train:
         self.train_accuracies = []
         self.train_losses = []
 
-    def execute_training(self, model, trainloader, device, optimiser, criterion, epoch):
+    def execute_training(self, model, trainloader, device, optimiser, criterion, scheduler, epoch):
         model.train()
         # if epoch == 0:
         #     self.train_accuracies = []
