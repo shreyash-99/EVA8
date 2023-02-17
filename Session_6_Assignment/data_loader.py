@@ -20,8 +20,7 @@ class Albumentation_cifar_Dataset(Dataset):
           A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
           A.HorizontalFlip(),
           A.ShiftScaleRotate(),
-          A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=0.473363, mask_fill_value=None),
-          A.ToGray()
+          A.CoarseDropout(1, 16, 16, 1, 16, 16,fill_value=0.473363, mask_fill_value=None)
       })
 
       self.norm = A.Compose({A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
@@ -36,7 +35,6 @@ class Albumentation_cifar_Dataset(Dataset):
       image, label = self.image_list[i]
       
       if self.train:
-        #apply augmentation only for training
         image = self.aug(image=np.array(image))['image']
       else:
         image = self.norm(image=np.array(image))['image']
