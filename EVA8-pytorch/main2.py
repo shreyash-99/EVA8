@@ -130,7 +130,8 @@ def train_network(model, device, trainloader, testloader, EPOCHS, optimizer, cri
         
         trainObj.execute(model, trainloader, device, optimizer, criterion, epoch)
         testObj.execute(model, testloader, device, criterion, epoch)
-        scheduler.step()
+        if scheduler:
+           scheduler.step()
 
     print('Finished Training')
 
