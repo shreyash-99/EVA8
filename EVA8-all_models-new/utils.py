@@ -24,7 +24,7 @@ class Albumentation_cifar_Dataset(Dataset):
         A.ShiftScaleRotate(),
         A.HorizontalFlip(p=0.5),
         A.CoarseDropout(max_holes=1, max_height=8, max_width=8, min_holes=1, min_height=8, 
-                               min_width=8, fill_value=[0.49139968 * 255, 0.48215841 * 255, 0.44653091 * 255], always_apply=False, p = 0.5),
+                               min_width=8, fill_value=[0.49139968, 0.48215841, 0.44653091], always_apply=False, p = 0.5),
         A.Normalize((0.49139968, 0.48215841, 0.44653091), (0.24703223, 0.24348513, 0.26158784)),
         # A.ToGray()
       })
