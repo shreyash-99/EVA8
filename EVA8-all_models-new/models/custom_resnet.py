@@ -82,8 +82,8 @@ class custom_ResNet(nn.Module):
         x = self.Layer2(x)
         x3 = self.Layer3_part1(x)
         x4 =  self.Layer3_part2(x)
-        x4 += x3
-        x = self.maxpool(x4)
+        x = x3 + x4
+        x = self.maxpool(x)
         x = x.view(-1, 512)
         x = self.fc(x)
         return x
