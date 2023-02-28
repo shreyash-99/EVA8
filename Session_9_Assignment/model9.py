@@ -1,3 +1,8 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
 class Ultimus(nn.Module):
     def __init__(self):
         super(Ultimus, self).__init__()
