@@ -67,4 +67,4 @@ class Model(nn.Module):
 
         x = self.fc_out(x)
 
-        return x
+        return F.log_softmax(x, dim = -1)
