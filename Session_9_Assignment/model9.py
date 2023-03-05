@@ -21,9 +21,10 @@ class Ultimus(nn.Module):
         value = self.fc_for_value(x)
 
         # print(query.T.shape, key.shape, value.shape)
-        am = torch.matmul(query.T , key)
-        am = F.log_softmax(am, dim = 1)
-        am = am / 2.8284 ##### dividing by root(8)
+        am = query.transpose(-1, -2) @ key
+        
+        am = am * (8 ** -0.5) ##### dividing by root(8)
+        am = F.softmax(am, dim = 1)
 
         Z = torch.matmul(value, am)
         Z = self.fc_out(Z)
@@ -67,4 +68,4 @@ class Model(nn.Module):
 
         x = self.fc_out(x)
 
-        return F.log_softmax(x, dim = -1)
+        return x
