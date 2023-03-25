@@ -339,7 +339,7 @@ def plotGradCAM(net, testloader, classes, device):
                     actual_labels.append(target[i])
                     predicted_labels.append(pred[i])
 
-    gradcam = GradCAM.from_config(model_type='resnet', arch=net, layer_name='layer4')
+    gradcam = GradCAM.from_config(model_type='resnet', arch=net, layer_name='mlp_head')
 
     fig = plt.figure(figsize=(10, 10))
     idx_cnt=1
