@@ -40,11 +40,11 @@ This readme file provides a complete documentation for the custom ResNet archite
 
 The custom ResNet architecture is trained using One Cycle Policy with the following parameters:
 
-Total epochs: 24
-Maximum at epoch: 5
-LRMIN: To be determined during training
-LRMAX: To be determined during training
-No Annihilation
+Total epochs: 24<br>
+Maximum at epoch: 5<br>
+LRMIN: To be determined during training<br>
+LRMAX: To be determined during training<br>
+No Annihilation<br>
 The training data is transformed using the following operations:
 
 RandomCrop (32, 32) after padding of 4
@@ -61,7 +61,7 @@ The custom ResNet architecture for CIFAR10 dataset has been designed and documen
 
 
 ## Traning Logs
-Batch_id=97 Loss=2.32335 Accuracy=30.77%: 100%|██████████| 98/98 [00:30<00:00, 3.25it/s]
+Batch_id=97 Loss=2.32335 Accuracy=30.77%: 100%|██████████| 98/98 [00:30<00:00, 3.25it/s] 
 Test set: Average loss: 1.6429, Accuracy: 4213/10000 (42.13%) EPOCH: 2 (LR: 0.006852006817213464)
 Batch_id=97 Loss=1.46489 Accuracy=48.12%: 100%|██████████| 98/98 [00:30<00:00, 3.22it/s]
 Test set: Average loss: 1.5617, Accuracy: 5072/10000 (50.72%) EPOCH: 3 (LR: 0.011324013634426928)
