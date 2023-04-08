@@ -15,13 +15,14 @@ Check out this [network](https://github.com/kentaroy47/vision-transformers-cifar
 ## Solution
 
 ### Model
-Modified model, [link](./vit_modified.py) 
-Implementation, [Python Notebook](./Session_10_Assignment.ipynb)
-Modified the model to use nn.Conv instead of nn.Linear whihc involved changing the dimension between batch_size, patch, height, width again and again as it will be very different when using nn.Conv and when using nn.Linear and einops made this rearraging very easy.<br>
-Also now when classifying, the model now uses the cls token(the first embedding) to make prediction rather than using all of them.
+Modified model, [link](./vit_modified.py) <br>
+Implementation, [Python Notebook](./Session_10_Assignment.ipynb)<br>
+
+## What I implemented
+1. Modified the model to use nn.Conv instead of nn.Linear whihc involved changing the dimension between batch_size, patch, height, width again and again as it will be very different when using nn.Conv and when using nn.Linear and einops made this rearraging very easy.<br>
+2. Also now when classifying, the model now uses the cls token(the first embedding) to make prediction rather than using all of them.
 
 ## Model Summary
-<br><br>
         Layer (type)               Output Shape         Param   <br>
             Conv2d-1            [-1, 128, 8, 8]           6,272<br>
          Rearrange-2              [-1, 64, 128]               0<br>
@@ -159,8 +160,3 @@ Estimated Total Size (MB): 17.07
 
 ![training logs](./images/training_logs.png)
 
-
-
-## Notes
-- Learning rate sensitivity: Optimal range is 0.01 to 0.005, otherwise accuracy stagnates at 0.1.
-- Model head dimension of 4 with batch size of 128 yields better performance and manageable GPU load.
