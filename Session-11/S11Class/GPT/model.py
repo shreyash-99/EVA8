@@ -47,7 +47,7 @@ class MultiHeadAttention(nn.Module):
 
     def __init__(self, num_heads, head_size, num_embed, block_size, dropout):
         super().__init__()
-        self.heads = nn.ModuleList(
+        self.heads = nn.ModuleList( ## creates a list of different heads
             [
                 AttentionHead(
                     head_size=head_size,
@@ -158,7 +158,7 @@ class Transformer(nn.Module):
         B, T = idx.shape
         # idx and targets are (B,T) tensor of integers
         # the token_emb is (B, T, C), C = NUM_EMBED
-        token_emb = self.token_embedding_table(idx)
+        token_emb = self.token_embedding_table(idx)  ## fetch the embedding of the token with index idx
         # (T, C)
         posit_emb = self.position_embedding_table(torch.arange(T, device=DEVICE))
 
