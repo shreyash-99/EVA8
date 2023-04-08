@@ -15,12 +15,11 @@ Check out this [network](https://github.com/kentaroy47/vision-transformers-cifar
 ## Solution
 
 ### Model
-Modified model, [link](/vit_modified.py) 
+Modified model, [link](./vit_modified.py) 
 
 ## Model Summary
-----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-================================================================
+<br>
+        Layer (type)               Output Shape         Param
             Conv2d-1            [-1, 128, 8, 8]           6,272
          Rearrange-2              [-1, 64, 128]               0
            Dropout-3              [-1, 65, 128]               0
@@ -144,17 +143,15 @@ Modified model, [link](/vit_modified.py)
        Rearrange-121                 [-1, 2, 1]               0
           Conv2d-122                 [-1, 2, 1]           1,290
        Rearrange-123                   [-1, 10]               0
-================================================================
 Total params: 1,989,258
 Trainable params: 1,989,258
 Non-trainable params: 0
-----------------------------------------------------------------
+<br>
 Input size (MB): 0.01
 Forward/backward pass size (MB): 9.47
 Params size (MB): 7.59
 Estimated Total Size (MB): 17.07
-----------------------------------------------------------------
-
+<br>
 ### Training Logs
 
 ![training logs](./images/training_logs.png)
