@@ -156,7 +156,10 @@ Forward/backward pass size (MB): 9.47
 Params size (MB): 7.59
 Estimated Total Size (MB): 17.07
 <br>
-### Training Logs
 
+### Training Logs
 ![training logs](./images/training_logs.png)
+
+### Misclassified Images
+![misclassified_images_gradcam](./images/grad-cam-imgs.png)
 
