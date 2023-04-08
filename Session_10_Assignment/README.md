@@ -158,7 +158,7 @@ Estimated Total Size (MB): 17.07
 <br>
 
 ### Training Logs
-![training logs](./images/training_logs.png)
+![training logs](./images/logs.png)
 
 ### Misclassified Images
 ![misclassified_images_gradcam](./images/grad-cam-imgs.png)
