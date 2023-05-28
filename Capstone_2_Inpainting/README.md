@@ -25,6 +25,8 @@ Passed the prompt through a tokenizer and then through a text encoder to convert
 Firstly the number of inference steps are selected which is based on the noise inserted in the image initially. Then instead of running the scheduler for the full loop, we run it for a less time as the image is not full noisy and it has some of the initial data. This noisy image is then passed to a loop where noise in the image will be predicted by the unet and then removed by the scheduler. The noise image is divided in 2 parts - unconditioned and conditioned which are then summed according to the guidance provided. The major step which diffrentiates it from the normal stable diffusion pipeline is give below:
 > init_latents_initialWithNoise = scheduler.add_noise(init_latents_orig, noise, t) <br>
 > latents = (init_latents_initialWithNoise * mask) + (latents * (1- mask)) <br>
+
+
 The above lines makes sure that the masked part whick has 0 in the areas masked is multiplied by the original latents with noise and not the ones where noise is predicted after getting from unet. This is because we dont want our prompt to intefare with our non masked part of the image. The (1 - mask) part ensures that where there is 1(in the painted part), that part is multiplied with latents received from the unet which itself is derived using the prompt. So using this only the masked part of image is getting influenced with a prompt which was the task of this project. <br> <br> 
 
 The final latents received from the pipeline are then passed through a vae decoder which then returnsthe tensor of initial dimensions and final moditified image is retrieved.
