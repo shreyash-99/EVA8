@@ -34,7 +34,12 @@ The final latents received from the pipeline are then passed through a vae decod
 ### Some results
 
  ![inference number 1](Capstone_2_Inpainting/images/Screenshot 2023-05-28 at 1.56.48 AM.png)
-
+<img href = "images/1.png">
+<img href = "images/2.png">
+<img href = "images/3.png">
+<img href = "images/4.png">
+<img href = "images/5.png">
+<img href = "images/6.png">
 
 
 
