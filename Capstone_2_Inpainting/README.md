@@ -33,12 +33,12 @@ The final latents received from the pipeline are then passed through a vae decod
 
 ### Some results
 
-<img href = "images/1.png" ></img>
-<img href = "images/2.png"></img>
-<img href = "images/3.png"></img>
-<img href = "images/4.png"></img>
-<img href = "images/5.png"></img>
-<img href = "images/6.png"></img>
+<img src = "images/1.png"></img>
+<img src = "images/2.png"></img>
+<img src = "images/3.png"></img>
+<img src = "images/4.png"></img>
+<img src = "images/5.png"></img>
+<img src = "images/6.png"></img>
 
 
 
