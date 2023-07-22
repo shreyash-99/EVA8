@@ -1,30 +1,10 @@
-[![MIT License][license-shield]][license-url]
+
 
 ## Training and Inferencing Controlnet for Canny Edges 
-________
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [Prerequisites](#prerequisites)
-* [References](#References)
-* [Acronyms](#Acronyms)
-* [Overview](#Overview)
-* [Approach](#Approach)
-* [Attempts and Results](#Attempts-And-Results)
-* [License](#license)
-
-## Prerequisites
-
-* [Python 3.8](https://www.python.org/downloads/) or Above
-* [Pytorch 1.8.1](https://pytorch.org/)  or above
-* [Google Colab](https://colab.research.google.com/)
 
 ## References
 
-- [ctlnet-orig] → ControlNet original library from lllyasviel
-- [ctlnet-train] → Details on how to train a ControlNet to Control Stable Diffusion
-- [ctlnet-custom] → ControlNet cloned from lllyasviel. Edited few modules to enable running in colab.
 - https://huggingface.co/blog/controlnet → Detailed blog on Using controlnet pretrained model in stable diffusion pipeline in colab
 
 ## Acronyms
