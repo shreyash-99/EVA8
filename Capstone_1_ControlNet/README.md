@@ -77,7 +77,7 @@ ________
 
 ## Attempts-and-Results
 
-
+- Attempt
 
     - Reference notebook : [S15_ControlNet_V6.ipynb ](https://github.com/anilbhatt1/Deeplearning-E8P1/blob/master/Controlnet-canny/S15_ControlNet_V6.ipynb) 
     - Preloaded the model with v1-5-pruned.ckpt (no canny edge involved so far).
