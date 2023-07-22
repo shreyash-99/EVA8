@@ -4,7 +4,6 @@
 
 
 ## References
-
 - https://huggingface.co/blog/controlnet → Detailed blog on Using controlnet pretrained model in stable diffusion pipeline in colab
 
 ## Acronyms
